@@ -1,32 +1,5 @@
 ---- Part 1 ---- 
 
-{-  
-Sigma: 
-It is a rule engine that checks interactions on Facebook for undesirable activities. It looks at the policies, then blocks these undesirable activities. It processes millions of interactions per second 
- 
-Functional Payout Framework: 
-It is an application that exploits embedded domain-specific functional language to process exotic financial derivatives. The framework can process multiple interpretations to price such trades and analyse the scripts 
- 
-Cryptol 
-Created for the NSA’s Trusted Systems Research Group. Helps authors of cryptographic implementations to check/prove characteristics of algorithms and experiment with new ones 
-
-Pure functions are easier to test 
-A pure function is a function that has the same return value for the same arguments and its evaluation has no side effects. Pure functions ensure determinism and predictability, and they don’t depend on any state apart from inputs. This encourages more tests to be written 
-
-Fewer bugs 
-Pure functions mean each function is just a mapping of inputs to outputs. This means that a print statement at each level will reveal the problem. Whereas in other languages, you could have shared or mutable state almost anywhere else in the codebase that’s potentially causing the bug 
-
-Function signatures are trusted 
-A pure function will have a signature that contains all the information about its usage. Whereas in other languages, the signature will not provide all the information about its usage 
-
-Concurrency is more easily kept safe 
-Pure functions are thread-safe, no two concurrent will be trying to access the same data at the same time. In other languages, it is not guaranteed and thus one process could overwrite the other’s value and then they have a race condition 
-
-A mathematical function is a rule for a pairing, input and output. Something is done to the input to produce the output; each input must have only a single output. I believe that Haskell functions closely resemble them as an input(s) is provided and an output is produced, can’t have multiple valid outputs. They differ in that Haskell can easily produce an output of a completely different type, whereas mathematical functions are limited to numbers
--} 
-
----- Part 2 ---- 
-
 type Dog = (String, Int) 
 --This creates a new type that I can use instead of writing (String, Int) everytime 
 
@@ -76,7 +49,7 @@ remove_tall_dogs :: [Dog] -> [Dog]
 remove_tall_dogs xs = [a | a <- xs, snd a <= 80] 
 --This removes all dogs above 80cm 
 
----- Part 3 ---- 
+---- Part 2 ---- 
 
 dup :: Int -> Char -> String 
 dup n a 
@@ -133,7 +106,7 @@ flagpattern :: Int -> Int -> String
 flagpattern x y = dup2 y (flagrows2 x x) 
 --This produces the flag a specific amount of times 
 
----- Part 4 ---- 
+---- Part 3 ---- 
 
 removeCommonLetters1 :: String -> String -> String 
 removeCommonLetters1 xs ys = filter (\x -> x `notElem` ys) xs 
@@ -186,7 +159,7 @@ compatibility xs ys
  |otherwise = xs ++ " " ++ condition1 xs ys ++ " " ++ ys ++ " and " ++ ys ++ " " ++ condition2 xs ys ++ " " ++ xs 
 --This returns the desired message depending on the conditions 
 
----- Part 5 ---- 
+---- Part 4 ---- 
 
 remove :: Eq a => [a] -> a -> [a] 
 remove xs x 
